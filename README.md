@@ -21,9 +21,8 @@
 
 <h1 align="center">
     <img alt="Github API" title="#Github API" src="src/assets/logo.png" width="80" height="80" />
+  <p align="center">Teste Github API</p>
 </h1>
-
-<h2 align="center">Teste Github API</h2>
 
 <p align="center">
  • <a href="#-tecnologias">Tecnologias</a>
