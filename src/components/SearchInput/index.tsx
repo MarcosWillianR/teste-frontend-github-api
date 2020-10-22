@@ -38,7 +38,7 @@ const SearchInput: React.FC<SearchInputProps> = ({
   const handleGetUser = useCallback(
     async (user: string) => {
       try {
-        const { data } = await api.get<userData>(`${user}`);
+        const { data } = await api.get<userData>(`${encodeURIComponent(user)}`);
 
         const {
           avatar_url,

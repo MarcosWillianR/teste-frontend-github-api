@@ -72,7 +72,9 @@ const Home: React.FC = () => {
                     </button>
                     <button
                       type="button"
-                      onClick={() => history.push(`${user.login}/repositories`)}
+                      onClick={() =>
+                        history.push(`${user.login}/repositories/starred`)
+                      }
                     >
                       <FiStar />
                     </button>
