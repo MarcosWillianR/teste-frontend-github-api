@@ -5,6 +5,8 @@ import Home from '../pages/Home';
 import Repositories from '../pages/Repositories';
 import StarredRepositories from '../pages/StarredRepositories';
 
+import NotFound from '../pages/NotFound';
+
 const Routes: React.FC = () => {
   return (
     <Switch>
@@ -16,7 +18,7 @@ const Routes: React.FC = () => {
         component={StarredRepositories}
       />
 
-      <Route path="*" component={() => <h1>Page not Found!</h1>} />
+      <Route path="*" component={NotFound} />
     </Switch>
   );
 };
