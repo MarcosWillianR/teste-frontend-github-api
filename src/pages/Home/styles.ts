@@ -37,7 +37,7 @@ export const ListContainer = styled.div`
   ul {
     max-height: 600px;
     overflow-y: auto;
-    padding-right: 22px;
+    padding: 0 22px;
 
     display: flex;
     flex-direction: column;

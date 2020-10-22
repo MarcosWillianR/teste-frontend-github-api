@@ -1,5 +1,6 @@
 import React, { useCallback, useState } from 'react';
 import { FiBook, FiStar, FiX } from 'react-icons/fi';
+import { useHistory } from 'react-router-dom';
 
 import SearchInput, { userData } from '../../components/SearchInput';
 
@@ -7,6 +8,7 @@ import { Container, ListContainer, UserInfo, ActionButtons } from './styles';
 
 const Home: React.FC = () => {
   const [users, setUsers] = useState<userData[]>([]);
+  const history = useHistory();
 
   const handleSearchNewUser = useCallback(
     (newUser: userData | null) => {
@@ -62,10 +64,16 @@ const Home: React.FC = () => {
                   </UserInfo>
 
                   <ActionButtons>
-                    <button type="button">
+                    <button
+                      type="button"
+                      onClick={() => history.push(`${user.login}/repositories`)}
+                    >
                       <FiBook />
                     </button>
-                    <button type="button">
+                    <button
+                      type="button"
+                      onClick={() => history.push(`${user.login}/repositories`)}
+                    >
                       <FiStar />
                     </button>
                   </ActionButtons>
