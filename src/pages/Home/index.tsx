@@ -54,7 +54,7 @@ const Home: React.FC = () => {
         />
 
         {searchErrorMessage && (
-          <span>
+          <span data-testid="user-search-error-message">
             {searchErrorMessage}
             <span role="img" aria-label="carinha triste">
               😢
@@ -67,8 +67,8 @@ const Home: React.FC = () => {
         <ul>
           {users.length >= 1 &&
             users.map(user => (
-              <>
-                <li key={user.login}>
+              <div key={user.login}>
+                <li>
                   <img src={user.avatar_url} alt={user.name} />
 
                   <UserInfo>
@@ -95,12 +95,14 @@ const Home: React.FC = () => {
                   <ActionButtons>
                     <button
                       type="button"
+                      data-testid="repositories-page"
                       onClick={() => history.push(`${user.login}/repositories`)}
                     >
                       <FiBook />
                     </button>
                     <button
                       type="button"
+                      data-testid="starred-repositories-page"
                       onClick={() =>
                         history.push(`${user.login}/repositories/starred`)
                       }
@@ -113,10 +115,11 @@ const Home: React.FC = () => {
                   onClick={() => handleRemoveUser(user.login)}
                   type="button"
                   className="remove-user"
+                  data-testid="remove-user-button"
                 >
                   <FiX />
                 </button>
-              </>
+              </div>
             ))}
         </ul>
       </ListContainer>

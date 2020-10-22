@@ -1,9 +1,4 @@
-import React, {
-  InputHTMLAttributes,
-  useCallback,
-  useState,
-  useRef,
-} from 'react';
+import React, { InputHTMLAttributes, useCallback, useState } from 'react';
 import { FiSearch } from 'react-icons/fi';
 
 import api from '../../services/apiClient';
