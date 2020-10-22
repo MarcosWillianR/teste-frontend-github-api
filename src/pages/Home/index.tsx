@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { FiBook, FiStar, FiX } from 'react-icons/fi';
 import { useHistory } from 'react-router-dom';
 
@@ -7,7 +7,15 @@ import SearchInput, { userData } from '../../components/SearchInput';
 import { Container, ListContainer, UserInfo, ActionButtons } from './styles';
 
 const Home: React.FC = () => {
-  const [users, setUsers] = useState<userData[]>([]);
+  const [users, setUsers] = useState<userData[]>(() => {
+    const storagedUsers = localStorage.getItem('@Github:users');
+
+    if (storagedUsers) {
+      return JSON.parse(storagedUsers);
+    }
+
+    return [];
+  });
   const [searchErrorMessage, setSearchErrorMessage] = useState('');
   const history = useHistory();
 
@@ -31,6 +39,10 @@ const Home: React.FC = () => {
   const handleSearchError = useCallback((message: string) => {
     setSearchErrorMessage(message);
   }, []);
+
+  useEffect(() => {
+    localStorage.setItem('@Github:users', JSON.stringify(users));
+  }, [users]);
 
   return (
     <Container>
