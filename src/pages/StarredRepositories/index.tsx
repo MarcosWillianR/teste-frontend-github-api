@@ -55,7 +55,7 @@ const StarredRepositories: React.FC = () => {
   return (
     <Container>
       <header>
-        <h1>{`Repositórios com estrela do ${userParam.user}`}</h1>
+        <h1>{`Repositórios com estrela do(a) ${userParam.user}`}</h1>
         <button type="button" onClick={() => goBack()}>
           <FiChevronLeft />
         </button>

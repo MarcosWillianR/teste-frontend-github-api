@@ -52,11 +52,11 @@ export const ListContainer = styled.div`
     max-height: 600px;
     overflow-y: auto;
     padding: 0 22px;
-
     display: flex;
     flex-direction: column;
 
     .remove-user {
+      width: 100%;
       margin-bottom: 22px;
       border-bottom-right-radius: 4px;
       border-bottom-left-radius: 4px;
