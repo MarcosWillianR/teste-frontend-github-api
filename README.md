@@ -19,7 +19,10 @@
   </a>
 </p>
 
-<h1 align="center">Teste Github API</h1>
+<h1 align="center" style="display: flex; flex-direction: column; align-items: center;">
+    <img alt="Github API" title="#Github API" src="src/assets/logo.png" width="80" height="80" />
+    Teste Github API
+</h1>
 
 <p align="center">
  • <a href="#-tecnologias">Tecnologias</a>
