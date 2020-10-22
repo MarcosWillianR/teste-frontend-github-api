@@ -32,7 +32,10 @@
     "prettier/prettier": "error",
     "no-use-before-define": "off",
     "react-hooks/rules-of-hooks": "error",
+    "react/prop-types": "off",
+    "camelcase": "off",
     "react-hooks/exhaustive-deps": "warn",
+    "react/jsx-props-no-spreading": "off",
     "react/jsx-filename-extension": [
       1,
       {

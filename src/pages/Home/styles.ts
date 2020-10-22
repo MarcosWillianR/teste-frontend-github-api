@@ -39,20 +39,42 @@ export const ListContainer = styled.div`
     overflow-y: auto;
     padding-right: 22px;
 
+    display: flex;
+    flex-direction: column;
+
+    .remove-user {
+      margin-bottom: 22px;
+      border-bottom-right-radius: 4px;
+      border-bottom-left-radius: 4px;
+      border: 0;
+      border: 1px solid #ccc;
+      background: #fff;
+      padding: 12px;
+      transition: all 0.5s;
+
+      &:hover {
+        background: #f4f4f4;
+      }
+
+      @media screen and (max-width: 540px) {
+        padding: 6px;
+      }
+
+      svg {
+        width: 22px;
+        height: 22px;
+        color: #222;
+      }
+    }
+
     li {
       display: flex;
       align-items: center;
       background: #fff;
-      box-shadow: 0 1px 8px rgba(0,0,0, 0.1);
-      border-radius: 4px;
+      border: 1px solid #ccc;
+      border-bottom: 0;
+      border-top-left-radius: 4px;
       transition: all 0.5s;
-      margin-bottom: 22px;
-
-      &:hover {
-        box-shadow: 0 1px 16px rgba(0,0,0, 0.2);
-        border-color: #fff;
-      }
-
 
       img {
         width: 80px;
@@ -93,6 +115,11 @@ export const UserInfo = styled.div`
     margin: 2px 0 4px 0;
     color: #333;
 
+    width: 300px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+
     @media screen and (max-width: 640px) {
       display: none;
     }
@@ -122,7 +149,7 @@ export const UserInfo = styled.div`
 export const ActionButtons = styled.div`
   align-self: stretch;
   border-top-right-radius: 4px;
-  border-bottom-right-radius: 4px;
+  margin-left: auto;
 
   @media screen and (max-width: 540px) {
     display: flex;
@@ -134,6 +161,7 @@ export const ActionButtons = styled.div`
     border: 0;
     background: #fff;
     padding: 12px 22px;
+    transition: all 0.5s;
 
     @media screen and (max-width: 540px) {
       padding: 12px;
@@ -154,4 +182,4 @@ export const ActionButtons = styled.div`
       border-bottom-right-radius: 4px;
     }
   }
-`
+`;
