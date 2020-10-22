@@ -8,6 +8,7 @@ import { Container, ListContainer, UserInfo, ActionButtons } from './styles';
 
 const Home: React.FC = () => {
   const [users, setUsers] = useState<userData[]>([]);
+  const [searchErrorMessage, setSearchErrorMessage] = useState('');
   const history = useHistory();
 
   const handleSearchNewUser = useCallback(
@@ -27,11 +28,27 @@ const Home: React.FC = () => {
     setUsers(state => state.filter(user => user.login !== login));
   }, []);
 
+  const handleSearchError = useCallback((message: string) => {
+    setSearchErrorMessage(message);
+  }, []);
+
   return (
     <Container>
       <header>
         <h1>Pesquisar por usuário</h1>
-        <SearchInput responseItems={handleSearchNewUser} />
+        <SearchInput
+          error={handleSearchError}
+          responseItems={handleSearchNewUser}
+        />
+
+        {searchErrorMessage && (
+          <span>
+            {searchErrorMessage}
+            <span role="img" aria-label="carinha triste">
+              😢
+            </span>
+          </span>
+        )}
       </header>
 
       <ListContainer>

@@ -26,10 +26,12 @@ export interface userData {
 
 interface SearchInputProps extends InputHTMLAttributes<HTMLInputElement> {
   responseItems(data: userData): void;
+  error(message: string): void;
 }
 
 const SearchInput: React.FC<SearchInputProps> = ({
   responseItems,
+  error,
   ...rest
 }) => {
   const [loading, setLoading] = useState(false);
@@ -61,14 +63,17 @@ const SearchInput: React.FC<SearchInputProps> = ({
           followers,
           following,
         });
+        error('');
       } catch {
-        console.log('ERRO');
+        error(
+          `parece que o usuário ${user} foi para o espaço e não conseguimos contatá-lo`,
+        );
       } finally {
         setLoading(false);
         setInputValue('');
       }
     },
-    [responseItems],
+    [responseItems, error],
   );
 
   const handleChange = useCallback(

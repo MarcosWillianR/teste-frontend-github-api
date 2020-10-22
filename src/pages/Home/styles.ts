@@ -19,6 +19,10 @@ export const Container = styled.div`
   }
 
   header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
     h1 {
       font-size: 26px;
       text-align: center;
@@ -30,6 +34,16 @@ export const Container = styled.div`
     }
 
     margin-bottom: 60px;
+
+    span {
+      margin-top: 12px;
+      color: #dd371a;
+      text-align: center;
+
+      span {
+        margin-left: 4px;
+      }
+    }
   }
 `;
 
